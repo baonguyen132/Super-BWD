@@ -1,0 +1,125 @@
+
+.battery {
+    margin-bottom: 30px;
+    background-color: #fff;
+    position: relative;
+    width: 415px !important;
+    height: 224px;
+    border-radius: 10px;
+    display: flex;
+    padding: 0px !important;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+}
+
+.img_battery {
+    background-color: #004953;
+    width: 230px;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.img_battery:hover img {
+    transform: scale(1.2);
+}
+
+.child_img_battery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 1;
+    width: 85px;
+    height: 85px;
+    background-color: #004953;
+    border-radius: 50%;
+    left: 89px;
+    top: 6px;
+    border: 4px solid #fdfffe;
+}
+
+.child_img_battery > span {
+    font-family: "Poppins", sans-serif;
+    font-size: 35px;
+    font-weight: 500;
+    color: #fff;
+}
+
+.infor_battery {
+    font-size: 18px;
+    width: 415px;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    margin-left: 43px;
+}
+
+.name_battery + p {
+    max-width: 220px;
+}
+
+.infor_battery .name_battery {
+    display: inline-block;
+    font-size: 25px;
+    color: #004953;
+    font-weight: bolder;
+}
+
+.img_battery img {
+    display: block;
+    padding-top: 45px;
+    transition: all linear 0.3s;
+    /* width: 50px; */
+}
+
+.count_battery {
+    font-size: 27px;
+    font-weight: 700;
+    font-style: italic;
+    color: #1b4d3e;
+}
+.center_battery {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    padding: 0px 35px;
+    position: relative;
+    gap: 35px;
+}
+
+@media only screen and (max-width: 450px) {
+    .battery {
+        flex-direction: column;
+        width: min(100%, 300px) !important;
+        height: 400px;
+    }
+    .infor_battery {
+        width: auto;
+        height: calc(100% - 169px);
+        margin: 0;
+        justify-content: center;
+    }
+
+    .img_battery {
+        width: 100%;
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+    .child_img_battery {
+        top: 130px;
+        right: 25px;
+        left: unset;
+    }
+    .img_battery img {
+        padding: 15px 0;
+    }
+    .number-battery input {
+        width: 90px;
+    }
+}

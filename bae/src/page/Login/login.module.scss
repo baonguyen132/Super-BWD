@@ -1,0 +1,213 @@
+$color_1: white;
+$color_2: black;
+$color_3: darkgreen;
+
+
+
+.view {
+	position: relative;
+	overflow: hidden;
+	height: 100vh;
+	display: flex;
+	justify-content: flex-end;
+	background: linear-gradient(225deg, #19ff8f, #004953);
+	&::before {
+		content: "";
+		position: absolute;
+		left: 34%;
+		width: 65px;
+		height: 65px;
+		top: 10%;
+		background: white;
+		box-shadow: 0 4px 8px 0 white, 0 6px 20px 0 #888;
+		transform: rotate(45deg);
+		border-radius: 10px;
+		filter: blur(10px);
+	}
+	&::after {
+		content: "";
+		position: absolute;
+		left: 34%;
+		width: 65px;
+		height: 65px;
+		top: 10%;
+		background: white;
+		transform: rotate(45deg);
+		z-index: 1;
+		border-radius: 10px;
+	}
+}
+.content {
+	width: 65%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	background: white;
+	border-bottom-left-radius: 30px;
+	border-top-left-radius: 30px;
+	box-shadow: 0 4px 8px 0 white, 0 6px 20px 0 #888;
+	justify-content: center;
+	padding: 0 20px;
+	z-index: 1;
+	form {
+		width: min(100%, 800px);
+		height: 80%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		gap: 20px;
+	}
+}
+.title {
+	justify-content: center;
+	text-align: center;
+	font-weight: 500 !important;
+	margin-left: 0;
+	b {
+		font-size: 50px;
+	}
+}
+.avata {
+	justify-content: center;
+	display: flex ;
+	margin: 0;
+	img {width: max(25%, 160px);}
+}
+.submit {
+	margin: 0px;
+	width: 100%;
+	justify-content: space-around;
+	margin: 0px !important;
+	button {
+		font-size: 1.2rem;
+		border-radius: 12px;
+		width: 100%;
+		background: none;
+		border: 3px solid #1ca586;
+		position: relative;
+		overflow: hidden;
+		transition: all 0.6s;
+		height: 50px;
+		z-index: 1;
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			height: 100%;
+			width: 0%;
+			background: #1ca586;
+			z-index: -1;
+			transition: all 0.5s;
+			left: 0;
+		}
+		&::after {
+			content: "";
+			position: absolute;
+			top: 0;
+			height: 100%;
+			width: 0%;
+			background: #1ca586;
+			z-index: -1;
+			transition: all 0.5s;
+			right: 0;
+		}
+		&:hover {
+			color: $color_1;
+			&::before {
+				width: 50%;
+			}
+			&::after {
+				width: 50%;
+			}
+		}
+	}
+}
+.ForgotPass_SignUp {
+	justify-content: space-between;
+	display: flex;
+	a {
+		font-size: 20px;
+		text-decoration: none;
+		color: $color_2;
+		transition: 0.5s all;
+		position: relative;
+		display: inline-block;
+		&:hover {
+			color: $color_3;
+			&::before {
+				width: 100%;
+				border: 1px solid #1a9a7c;
+			}
+		}
+		&::before {
+			content: "";
+			bottom: 0;
+			position: absolute;
+			left: 0;
+			border: 0px solid black;
+			width: 0%;
+			transition: 0.5s all;
+		}
+	}
+}
+.signup {
+	a {
+		float: right;
+	}
+}
+.loginSoical {
+	width: 100%;
+	justify-content: center;
+	margin: 0px;
+	img {
+		width: 50px;
+		height: 50px;
+	}
+}
+.result {
+	p {
+		text-align: center;
+		margin: 0px;
+	}
+}
+@media only screen and (min-width: 1800px) {
+	body {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.view {
+		width: 1800px;
+		height: 900px !important;
+		border-radius: 10px;
+		box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+	}
+}
+@media only screen and (max-width: 750px) {
+	.view {
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		&::before {
+			display: none;
+		}
+		&::after {
+			display: none;
+		}
+	}
+	.content {
+
+		width: min(100%, 460px);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.2274509804);
+        box-shadow: none;
+        height: max-content;
+        padding: 50px 15px;
+		
+	}
+}
+@media only screen and (max-width: 460px) {
+	.content {
+		height: 100%;
+	}
+}

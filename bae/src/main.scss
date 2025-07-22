@@ -1,0 +1,14 @@
+$font-family_1: "Raleway", sans-serif;
+
+@import "https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300&display=swap";
+/* điều chỉnh chiều dài của input date khi màn hình nhỏ hơn 768px */
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+body {
+	font-family: $font-family_1 !important;
+	height: 100vh;
+	position: relative;
+}

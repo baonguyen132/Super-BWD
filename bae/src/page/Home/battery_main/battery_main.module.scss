@@ -1,0 +1,113 @@
+$color_1: #fff;
+$color_2: white;
+$font-family_1: "Poppins", sans-serif;
+$background-color_1: #1b4d3e;
+
+#main_battery {
+    display: flex;
+    flex-direction: column;
+    padding: 60px 0;
+}
+
+.batterys {
+    position: relative;
+
+    .slogan_battery {
+        font-size: 3.2rem;
+        letter-spacing: 2px;
+        font-weight: bold;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        position: relative;
+
+        &:after {
+            position: absolute;
+            content: "";
+            height: 5px;
+            width: 48%;
+            top: calc(100% + 12px);
+            background-color: $background-color_1;
+            background-image: linear-gradient(45deg, #009432, #96ee82);
+            border-radius: 999px;
+            bottom: 0;
+        }
+    }
+}
+h2 {
+    strong {
+        font-family: $font-family_1;
+        background-color: $background-color_1;
+        background-image: linear-gradient(0deg, #004953 0%, #96ee82 100%);
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+    }
+}
+
+.center_page {
+    display: flex;
+    flex-direction: column;
+    padding: 35px;
+}
+
+.parent_battery {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.center_battery {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    padding: 0px 35px;
+    position: relative;
+    gap: 35px;
+}
+
+button.open_mode_load_image {
+    width: 190px;
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(90deg, rgb(58 96 90) 0%, rgb(114 176 170) 100%);
+    font-size: 18px;
+    color: $color_2;
+    font-weight: bolder;
+    transition: all .5s;
+    transform: translateZ(0px);
+}
+
+button.add_battery {
+    width: 190px;
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(270deg, rgb(58 96 90) 0%, rgb(114 176 170) 100%);
+    font-size: 18px;
+    color: $color_2;
+    font-weight: bolder;
+    transition: all .5s;
+    transform: translateZ(0px);
+}
+
+button.send_image {
+    background: linear-gradient(90deg, rgb(58 96 90) 0%, rgb(114 176 170) 100%);
+    color: $color_2;
+}
+
+@media only screen and (max-width: 450px) {
+	.battery {
+		flex-direction: column;
+		width: min(100%, 300px) !important;
+		height: 400px;
+	}
+	.slogan_battery {
+		font-size: 2.5rem;
+		padding: 0px 20px;
+		&:after {
+			width: 70% !important;
+		}
+	}
+}
