@@ -1,0 +1,124 @@
+$color_1: #fff;
+
+
+/* =========================scrollbar_txt============================*/
+/* Firefox */
+/* Chrome, Edge and Safari */
+/**/
+/*===========================================================*/
+* {
+    scrollbar-width: 4px !important;
+    scrollbar-color: #d2f9c4 hsl(0, 0%, 85%);
+}
+
+.animate1 {
+    transform: translateX(-100%);
+    transition: all 0.4s ease-in-out;
+    opacity: 0;
+    filter: blur(5px);
+}
+
+.animate2 {
+    transform: translateX(-100%);
+    transition: all 0.4s ease-in-out;
+    opacity: 0;
+    filter: blur(5px);
+    transition-delay: 100ms;
+}
+
+.animate3 {
+    transform: translateX(-100%);
+    transition: all 0.4s ease-in-out;
+    opacity: 0;
+    filter: blur(5px);
+    transition-delay: 200ms;
+}
+
+.animate4 {
+    transform: translateX(-100%);
+    transition: all 0.4s ease-in-out;
+    opacity: 0;
+    filter: blur(5px);
+    transition-delay: 300ms;
+}
+
+.active1 {
+    transform: translateY(0);
+    opacity: 1;
+    filter: blur(0);
+}
+
+.active2 {
+    transform: translateY(0);
+    opacity: 1;
+    filter: blur(0);
+}
+
+.active3 {
+    transform: translateY(0);
+    opacity: 1;
+    filter: blur(0);
+}
+
+.active4 {
+    transform: translateY(0);
+    opacity: 1;
+    filter: blur(0);
+}
+
+.development {
+    background-size: cover;
+    background-position: bottom;
+    background-attachment: fixed;
+    padding: 50px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(360deg, #1b4d3e, #004953);
+
+    span {
+        color: $color_1;
+        font-weight: 600;
+    }
+
+    
+
+    .slogan_battery {
+        font-size: 3.2rem;
+        letter-spacing: 2px;
+        font-weight: bold;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        position: relative;
+        color: #fff;
+
+        &:after {
+            position: absolute;
+            content: "";
+            height: 5px;
+            width: 48%;
+            top: calc(100% + 12px);
+            background-color: #1b4d3e;
+            background-image: linear-gradient(45deg, #009432, #96ee82);
+            border-radius: 999px;
+            bottom: 0;
+        }
+    }
+}
+
+.bd_example {
+    z-index: 2;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-direction: row;
+}
+@media only screen and (max-width: 450px) {
+    .slogan_battery:after {
+        width: 70% !important;
+    }
+    
+}

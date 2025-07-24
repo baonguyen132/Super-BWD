@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import styles from "./battery_main.module.scss";
 import CardBattery from "./card_battery";
+import { LINK_API_PROJECT, LINK_API_AI } from "../../../include/until";
 
 function BatteryMain() {
   const [listNumberBattery, setListNumberBattery] = useState({});
@@ -22,7 +23,7 @@ function BatteryMain() {
     formData.append("image", newFile);
 
     try {
-      const response = await fetch("http://127.0.0.1:5000/upload_image", {
+      const response = await fetch(LINK_API_AI + "upload_image", {
         method: "POST",
         body: formData,
       });
@@ -60,7 +61,7 @@ function BatteryMain() {
       const id = input.name.split("_")[1];
 
       if (count !== 0) {
-        const url = `http://127.0.0.1:8000/api/cart/add/${id}-${count}`;
+        const url = LINK_API_PROJECT+`api/cart/add/${id}-${count}`;
 
         fetch(url)
           .then((res) => res.text())
@@ -84,7 +85,7 @@ function BatteryMain() {
   useEffect(() => {
     const fetchBatteryList = async () => {
       try {
-        const response = await fetch("http://127.0.0.1:8000/api/battery");
+        const response = await fetch(LINK_API_PROJECT+"api/battery");
         const data = await response.json();
         setBatteryList(data.records || []);
       } catch (error) {
@@ -110,7 +111,6 @@ function BatteryMain() {
               {batteryList.map((element) => {
                 const key = element.name_battery?.split(" ")[1];
                 const value = listNumberBattery?.[key] || 0;
-                console.log(key , value);
                 return (
                   <CardBattery
                     element={element}

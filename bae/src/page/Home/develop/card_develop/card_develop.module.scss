@@ -1,0 +1,115 @@
+$color_1: #fff;
+$color_2: #aab8c2;
+$color_3: grey;
+$color_4: none;
+$color_5: #f90737;
+$background-color_1: rgba(130, 128, 128, 0.4);
+$background-color_2: rgba(0, 0, 0, 0.5);
+$background-color_3: #dfe9eb;
+$background-color_4: #b8c0c2;
+$background-color_5: #8e9d88;
+$background-color_6: #bef4aa;
+$background-color_7: #62a34b;
+
+.card {
+    background-color: $background-color_1;
+    padding: 0px;
+    margin: 15px !important;
+
+    .card_body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+}
+
+.card_title {
+    color: $color_1;
+    text-align: center;
+}
+
+.card_img_top {
+    height: 250px;
+    object-fit: cover;
+}
+
+.card_text {
+    overflow-y: scroll;
+    height: 94px;
+    color: $color_1;
+    display: flex;
+    justify-content: center;
+    text-align: justify;
+    line-height: 1.5;
+    padding-right: 10px;
+
+    &::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    &::-webkit-scrollbar-track {
+        border-radius: 5px;
+        background-color: $background-color_3;
+
+        &:hover {
+            background-color: $background-color_4;
+        }
+
+        &:active {
+            background-color: $background-color_4;
+        }
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 5px;
+        background-color: $background-color_5;
+
+        &:hover {
+            background-color: $background-color_6;
+        }
+
+        &:active {
+            background-color: $background-color_7;
+        }
+    }
+}
+
+.card_img_overlay {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    height: 336px;
+}
+
+.card_button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .glass_button {
+        outline: none;
+        width: 150px;
+        height: 50px;
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.08) 50%, rgba(255, 255, 255, 0.03) 100%);
+        backdrop-filter: url(#glass);
+        transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 2.2);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 6px;
+
+        label {
+            font-size: 20px;
+        }
+        label.like {
+            color: red;
+        }
+
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+
+}

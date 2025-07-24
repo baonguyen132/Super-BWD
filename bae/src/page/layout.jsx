@@ -11,14 +11,7 @@ function Layout({ title, children }) {
           href="https://fonts.googleapis.com/icon?family=Material+Icons"
           rel="stylesheet"
         />
-        <link
-          href="https://cdn.boxicons.com/fonts/basic/boxicons.min.css"
-          rel="stylesheet"
-        />
-        <link
-          href="https://cdn.boxicons.com/fonts/brands/boxicons-brands.min.css"
-          rel="stylesheet"
-        />
+        
       </Helmet>
       {/* Nội dung chính của trang */}
       {children}
