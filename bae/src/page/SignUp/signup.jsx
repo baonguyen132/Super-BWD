@@ -1,7 +1,12 @@
 import React, { useState } from "react";
 import styleSignUp from "./signup.module.scss";
+import Cookies from "js-cookie";
+import Layout from "../layout";
 
 function SignUpForm() {
+
+  if (Cookies.get("API_USER")) {location.href = "/";}
+
   const [form, setForm] = useState({
     firstname: "",
     lastname: "",
@@ -26,7 +31,7 @@ function SignUpForm() {
   };
 
   return (
-    <Layout title="signup">
+    <Layout  title="signup">
       <div className={styleSignUp.view}>
         <div className={styleSignUp.content}>
           <form onSubmit={handleSubmit}>

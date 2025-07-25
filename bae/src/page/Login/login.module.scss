@@ -49,7 +49,7 @@ $color_3: darkgreen;
 	justify-content: center;
 	padding: 0 20px;
 	z-index: 1;
-	form {
+	.form {
 		width: min(100%, 800px);
 		height: 80%;
 		display: flex;
@@ -171,11 +171,6 @@ $color_3: darkgreen;
 	}
 }
 @media only screen and (min-width: 1800px) {
-	body {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-	}
 	.view {
 		width: 1800px;
 		height: 900px !important;

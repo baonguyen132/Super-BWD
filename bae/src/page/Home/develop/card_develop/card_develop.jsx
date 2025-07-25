@@ -23,7 +23,7 @@ function CardDevelop({ card }) {
         <h5 className={`card-title ${styles.card_title}`}>{card.title}</h5>
         <p className={`card-text ${styles.card_text}`}>{card.text}</p>
         <div className={styles.card_button}>
-          <button class={styles.glass_button} onClick={handClick}>
+          <button className={styles.glass_button} onClick={handClick}>
             <span>Yêu thích</span>
             <label htmlFor="heart" className={state ? styles.like : ""}>❤</label>
           </button>

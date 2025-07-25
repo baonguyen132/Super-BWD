@@ -2,6 +2,8 @@ $color_1: #004953;
 $color_2: #006a4e;
 $color_3: #fff;
 
+
+
 .main {
   height: max-content;
 }
@@ -17,7 +19,7 @@ $color_3: #fff;
     width: 100vw;
     height: 100vh;
     object-fit: cover;
-    
+
   }
 
   .content {
@@ -29,12 +31,17 @@ $color_3: #fff;
     align-items: center;
   }
 
+  p {
+    margin: 0px;
+  }
+
   .sliderInfo {
     position: relative;
     text-align: center;
     display: flex;
     flex-direction: column;
-    padding: 0px 15px;
+    align-items: center;
+    gap: 10px;
   }
 
   .sliderPhara {
@@ -42,7 +49,6 @@ $color_3: #fff;
     font-weight: 580;
     color: $color_1;
     letter-spacing: 5px;
-    margin: 0 !important;
     line-height: unset !important;
   }
 
@@ -51,33 +57,63 @@ $color_3: #fff;
     color: $color_2;
     letter-spacing: 6px;
     font-size: 30px;
-    margin-top: 16px;
+
   }
+}
+
+
+.liquid_glass {
+  position: relative;
+  border-radius: 100vmax;
+  isolation: isolate;
+  background-color: rgba(255, 255, 255, 0.25);
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 1.25rem;
+  box-shadow: 0 6px 6px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  user-select: none;
+  width: 180px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 
   .sliderBtn {
-    align-self: center;
-    display: block;
-    width: 180px;
-    text-align: center;
-    font-size: 16px;
-    font-weight: 500;
+    font-size: 17px;
+    font-weight: bold;
     text-decoration: none;
-    color: $color_3;
-    border-radius: 50px;
-    padding: 14px 0;
-    margin-top: 27px;
-    background: linear-gradient(320deg, #1b4d3e, #18453b);
+    color: #004953;
     transition: all ease 0.8s;
-
-    &:hover {
-      background: linear-gradient(45deg, #057d2d, #70c25e);
-      box-shadow: 0 0 10px #057d2d, 0 0 20px #057d2d, 0 0 45px #057d2d;
-      transition: all ease 0.8s;
-    }
 
     i {
       margin-left: 6px;
     }
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+  }
+
+  // Glass distortion effect
+  &::before {
+    backdrop-filter: blur(3px);
+    filter: url(#glass-distortion);
+    z-index: -1;
+  }
+
+  // Outline shine
+  &::after {
+    box-shadow: inset 2px 2px 1px 0 rgb(255 255 255 / 50%), inset -1px -1px 1px 1px rgb(255 255 255 / 50%);
+  }
+
+  &.dragging {
+    cursor: grabbing;
   }
 }
 
@@ -86,12 +122,12 @@ $color_3: #fff;
     .sliderPhara {
       font-size: 2rem;
     }
-  
+
     .sliderMessage {
       letter-spacing: 3px;
       font-size: 1.5rem;
     }
   }
-  
+
 
 }

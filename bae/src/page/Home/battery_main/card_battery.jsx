@@ -1,3 +1,4 @@
+import { LINK_API_PROJECT } from "../../../include/until";
 import styles from "./card_battery.module.scss"
 
 function CardBattery({element , value}) {
@@ -12,7 +13,7 @@ function CardBattery({element , value}) {
       {/* 2. Hình ảnh */}
       <div className={styles.img_battery}>
         <img
-          src={`http://127.0.0.1:8000/storage/image/Battery/${element.image}.jpg`}
+          src={LINK_API_PROJECT+`storage/image/Battery/${element.image}.jpg`}
           alt={element.name_battery}
         />
       </div>
@@ -40,6 +41,7 @@ function CardBattery({element , value}) {
                 value={value}
                 min="0"
                 max="100"
+                onChange={() => {}}
               />
             </div>
           </div>
