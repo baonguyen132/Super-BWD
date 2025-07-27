@@ -81,11 +81,19 @@ function BatteryMain() {
       }
     });
   }
-
   useEffect(() => {
     const fetchBatteryList = async () => {
       try {
-        const response = await fetch(LINK_API_PROJECT+"api/battery");
+        const response = await fetch(
+          LINK_API_PROJECT + "api/battery",
+          {
+            headers: {
+              "Content-Type": "application/json",
+              Accept: "application/json",
+              "ngrok-skip-browser-warning": "true"
+            }
+          }
+        );
         const data = await response.json();
         setBatteryList(data.records || []);
       } catch (error) {

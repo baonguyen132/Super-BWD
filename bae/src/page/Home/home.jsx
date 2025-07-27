@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 
-import Layout from "../layout";
+import Layout from "../../components/common/layout";
 import Footer from "../../include/footer/footer";
 import Header from "./header/header";
 import Introduce from "./introduce/introduce";
