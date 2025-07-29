@@ -20,8 +20,8 @@ const Header = ({ user }) => {
             <span className={styles.sliderMessage}>
               - Hãy cùng chúng tôi làm những điều này nhé! -
             </span>
-            <div className={styles.liquid_glass}>
-              <a href="#protect" className={styles.sliderBtn}>
+            <div className={styles.liquid_glass} onClick={() => {window.location.href = "/dashboard"}}>
+              <a href="/dashboard" className={styles.sliderBtn}>
                 BẮT ĐẦU <i className="fa-solid fa-chevron-right"></i>
               </a>
             </div>

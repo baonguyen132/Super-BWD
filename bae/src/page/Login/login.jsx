@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import styleLogin from "./login.module.scss";
 
 import logo from "../../assets/image/login.png";
-import Layout from "../layout";
+import Layout from "../../components/common/layout";
 import { LINK_API_PROJECT } from "../../include/until";
 
 import Cookies from "js-cookie";

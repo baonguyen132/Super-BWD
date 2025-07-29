@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styleSignUp from "./signup.module.scss";
 import Cookies from "js-cookie";
-import Layout from "../layout";
+import Layout from "../../components/common/layout";
 
 function SignUpForm() {
 
