@@ -4,6 +4,8 @@ import LoginPage from "./page/Login/login";
 import Home from "./page/Home/home";
 import UserProvider from "./context/UserContext";
 import Dashboard from "./page/Dashboard/dashboard";
+import DashboardHome from "./components/DashboardPage/DashboardHome";
+
 
 
 const router = createBrowserRouter([
@@ -23,6 +25,10 @@ const router = createBrowserRouter([
       </UserProvider>
     ),
     children: [
+      {
+        index: true,
+        element: <DashboardHome />,
+      },
       {
         path: "page1",
         element: <h1>ss</h1>,

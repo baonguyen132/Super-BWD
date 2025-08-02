@@ -1,0 +1,18 @@
+.voucher_list {
+  padding: 24px 18px;
+}
+
+.voucher_title {
+  color: var(--color-success-emphasis);
+  margin-bottom: 20px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: start;
+}

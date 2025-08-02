@@ -1,0 +1,119 @@
+.red_day {
+    color: #e94d40 !important;
+    font-weight: 800;
+    text-shadow: 0 2px 8px rgba(233, 77, 64, 0.10);
+}
+
+.week_calendar_container {
+    width: 100%;
+    max-width: 420px;
+    border-radius: 10px;
+    padding: 24px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2.5px solid #06d972;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+}
+
+.header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.18rem;
+    font-weight: 800;
+    color: #1a9c5a;
+    letter-spacing: 1px;
+    padding: 10px 15px;
+}
+
+.month_label {
+    color: #1a9c5a;
+    font-weight: 800;
+    font-size: 1.18rem;
+    text-shadow: 0 2px 8px rgba(6, 217, 114, 0.10);
+}
+
+.more {
+    color: #b2b2b2;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.week_days_row {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    margin-bottom: 8px;
+}
+
+.day_label {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1a9c5a;
+    font-weight: 700;
+    font-size: 1.12rem;
+    opacity: 1;
+    letter-spacing: 0.5px;
+}
+
+.week_dates_row {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    margin-top: 2px;
+}
+
+.date_item {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: 1.22rem;
+    transition: background 0.2s, color 0.2s, border 0.2s;
+}
+
+.active_date {
+    font-weight: 900;
+    border: 2px solid #1a9c5a;
+    position: relative;
+    border-radius: 20px;
+    isolation: isolate;
+    background-color: rgba(255, 255, 255, 0.25);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 1.25rem;
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    user-select: none;
+    transition: all .4s;
+
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+    }
+
+    // Glass distortion effect
+    &::before {
+        backdrop-filter: blur(3px);
+        z-index: -1;
+    }
+
+    // Outline shine
+    &::after {
+        box-shadow: inset 2px 2px 1px 0 rgb(255 255 255 / 50%), inset -1px -1px 1px 1px rgb(255 255 255 / 50%);
+    }
+
+    &.dragging {
+        cursor: grabbing;
+    }
+}
