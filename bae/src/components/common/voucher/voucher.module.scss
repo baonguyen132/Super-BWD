@@ -1,4 +1,3 @@
-
 .voucher {
     width: min(450px, 100%);
     height: 160px;
@@ -9,6 +8,7 @@
     position: relative;
     box-shadow: 0 4px 8px 0 rgb(0 0 0 / 15%), 0 6px 20px 0 rgb(0 0 0 / 10%);
 }
+
 .voucher:hover {
     transform: translateY(-2px) scale(1.02);
 }
@@ -29,7 +29,7 @@
     float: left;
     position: relative;
 
-    
+
 }
 
 .edit_voucher {
@@ -56,10 +56,10 @@
 .contentV {
     width: 100%;
     height: 100%;
-    border-right: 1px dashed #8888;
+    border-right: 1px dashed rgba(136, 136, 136, 0.5333333333);
     padding: 5px;
     display: flex;
-    /* overflow: hidden; */
+    gap: 20px;
 }
 
 
@@ -74,16 +74,16 @@
 
 
 .content_introduce {
-    width: calc(100% - 122px);
-    padding: 15px 0px 15px 18px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+
     ul {
         margin: 0px;
         padding: 0;
         list-style: none;
     }
+
     h3 {
         color: rgb(6, 217, 114);
         font-weight: 700;
@@ -92,15 +92,18 @@
         margin-bottom: 8px;
         text-shadow: 0 2px 8px rgba(6, 217, 114, 0.10);
     }
+
     li {
         font-size: 17px;
         margin-bottom: 4px;
         color: #222;
     }
+
     li b {
         color: #1a9c5a;
         font-weight: 600;
     }
+
     li:nth-child(2) a {
         color: black;
         text-decoration: none;
@@ -109,7 +112,6 @@
 
 @media only screen and (max-width: 780px) {
     .voucher {
-        width: min(300px, 100%);
         height: max-content;
     }
 
@@ -117,7 +119,7 @@
         flex-direction: column;
     }
 
-    .code-voucher {
+    .code_voucher {
         width: 100%;
 
         height: max-content;
@@ -179,6 +181,7 @@
         padding: 10px;
     }
 }
+
 @media only screen and (max-width: 420px) {
     .editV {
         flex-direction: column;
