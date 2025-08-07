@@ -8,23 +8,23 @@ import DashboardVoucherList from "../../../../components/DashboardPage/Dashboard
 import DashboardCharts from "../../../../components/DashboardPage/DashboardCharts/DashboardCharts";
 import DashboardUserInfo from "../../../../components/DashboardPage/DashboardUserInfo/DashboardUserInfo";
 import DashboardWeekCalendar from "../../../../components/DashboardPage/DashboardWeekCalendar/DashboardWeekCalendar";
+import DashboardHistoryList from "../../../../components/DashboardPage/DashboardHistoryList/DashboardHistoryList";
 
 function DashboardHome() {
   return (
     <div className={styles.dashboard_home}>
       <DashboardHeader />
       <DashboardBanner />
-      
 
       <div className={styles.main_grid}>
         <div className={styles.left_col}>
           <DashboardCharts />
           <DashboardVoucherList />
+          <DashboardHistoryList />
         </div>
         <div className={styles.right_col}>
           <DashboardWeekCalendar />
           <DashboardUserInfo />
-
         </div>
       </div>
     </div>
