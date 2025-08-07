@@ -6,6 +6,7 @@ import UserProvider from "./context/UserContext";
 import Dashboard from "./page/Dashboard/dashboard";
 import DashboardHome from "./page/Dashboard/screen/DasboardHome/DashboardHome";
 import HistoryList from "./page/Dashboard/screen/DashboardHistory/HistoryList";
+import DashboardVoucher from "./page/Dashboard/screen/DashboardVoucher/DashboardVoucher";
 
 
 
@@ -31,8 +32,8 @@ const router = createBrowserRouter([
         element: <DashboardHome />,
       },
       {
-        path: "page1",
-        element: <h1>ss</h1>,
+        path: "voucher",
+        element: <DashboardVoucher />,
       },
       {
         path: "history",

@@ -1,0 +1,149 @@
+.voucher_screen_container {}
+
+.title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #06d972;
+    text-align: center;
+}
+
+.filter_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(90deg, #e6f9ee 0%, #f8fff8 100%);
+  border-radius: 5px;
+  box-shadow: 0 2px 12px #06d97211;
+  padding: 18px 24px 18px 32px;
+  margin-bottom: 25px;
+}
+
+.filter_row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.filter_btn,
+.active_filter {
+    width: 120px;
+    height: 40px;
+    padding: 8px 24px;
+    border-radius: 5px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 600;
+    background: #e6f9ee;
+    color: #06d972;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+.active_filter {
+    background: linear-gradient(90deg, #06d972 0%, #4caf50 100%);
+    color: #fff;
+    box-shadow: 0 2px 8px #06d97233;
+}
+
+// Custom select styling
+.filter_btn {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+  background: linear-gradient(90deg, #e0eafc 0%, #cfdef3 100%);
+  color: #333;
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.2s, border 0.2s;
+  outline: none;
+  cursor: pointer;
+  margin-left: 12px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  position: relative;
+  background-image: url('data:image/svg+xml;utf8,<svg fill="%23333" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 20px 20px;
+}
+
+// Style the option elements (limited by browser support)
+.filter_btn option {
+  background: #f7fafc;
+  color: #333;
+  font-weight: 500;
+  padding: 10px 0;
+  border-radius: 6px;
+}
+
+// For Windows/Chrome, add focus/hover effect
+.filter_btn:focus {
+  box-shadow: 0 0 0 2px #a0c4ff;
+  border: 1px solid #a0c4ff;
+}
+
+// Optional: add a subtle border on hover
+.filter_btn:hover {
+  border: 1px solid #bdbdbd;
+}
+
+.voucher_list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+
+.redeem_button {
+    background: linear-gradient(90deg, #06d972 0%, #4caf50 100%);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    width: calc(100% - 20px);
+    padding: 10px;
+    font-weight: 700;
+    font-size: 1.05rem;
+    box-shadow: 0 2px 8px #06d97233;
+    outline: none;
+}
+
+
+.redeemed_label {
+    background: #e6f9ee;
+    color: #06d972;
+    border-radius: 8px;
+    width: calc(100% - 20px);
+    padding: 8px 22px;
+    font-weight: 700;
+    font-size: 1rem;
+    box-shadow: 0 1px 4px #06d97222;
+    display: flex
+;
+    justify-content: center;
+    align-items: center;
+}
+
+@media only screen and (max-width: 1080px) {
+    .voucher_list {
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .voucher_list {
+        grid-template-columns: repeat(1, 1fr);
+
+    }
+    .filter_header {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 14px 10px;
+    gap: 10px;
+  }
+  .filter_row {
+    justify-content: flex-start;
+  }
+}
