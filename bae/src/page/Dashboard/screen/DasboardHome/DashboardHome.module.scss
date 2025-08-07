@@ -1,0 +1,75 @@
+:root {
+  --color-info: #5cbf74;
+  --color-success: #2ecc71;
+  --color-warning: #f1c40f;
+  --color-error: #e74c3c;
+  --color-lightsuccess: #2ecc7120;
+  --color-lighterror: #e74c3c20;
+  --color-lightinfo: #e6f4ec;
+  --color-darkinfo: #1e5631;
+  --color-lightwarning: #f1c40f20;
+  --color-white: #fff;
+  --color-dark: #202936;
+  --color-border: #e3f0e7;
+  --color-darkborder: #1b3c2f;
+  --color-link: #2e7d32;
+  --color-muted: #5a6a85;
+  --color-darklink: #66bb6a;
+  --color-lightgray: #f6f9fc;
+  --color-darkgray: #2e3e3f;
+  --color-bodytext: #4b604fbf;
+  --color-error-emphasis: #c0392b;
+  --color-warning-emphasis: #d4ac0d;
+  --color-success-emphasis: #27ae60;
+  --color-primary: #2ecc71;
+  --color-primary-emphasis: #27ae60;
+  --color-secondary: #58d68d;
+  --color-secondary-emphasis: #45b97c;
+  --color-lightprimary: #2ecc711a;
+  --color-lightsecondary: #58d68d20;
+}
+
+
+
+
+.dashboard_home {
+  min-height: 100vh;
+  padding: 0;
+  font-family: "Poppins", "Segoe UI", Arial, sans-serif;
+}
+
+
+.main_grid {
+  display: grid;
+  grid-template-columns: 5fr 2fr;
+  gap: 40px;
+}
+.left_col {
+  min-width: 340px;
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column ;
+  gap: 15px;
+}
+.right_col {
+  min-width: 320px;
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column ;
+  gap: 15px;
+}
+
+@media (max-width: 900px) {
+  .main_grid {
+    grid-template-columns: 1fr;
+    margin: 0 8px;
+    gap: 18px;
+  }
+  .right_col, .left_col {
+    border-radius: 14px;
+    padding: 12px 6px;
+  }
+  .right_col {
+    margin-top: 18px;
+  }
+}

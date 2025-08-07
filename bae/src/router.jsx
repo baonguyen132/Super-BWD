@@ -4,7 +4,8 @@ import LoginPage from "./page/Login/login";
 import Home from "./page/Home/home";
 import UserProvider from "./context/UserContext";
 import Dashboard from "./page/Dashboard/dashboard";
-import DashboardHome from "./components/DashboardPage/DashboardHome";
+import DashboardHome from "./page/Dashboard/screen/DasboardHome/DashboardHome";
+import HistoryList from "./page/Dashboard/screen/DashboardHistory/HistoryList";
 
 
 
@@ -34,8 +35,8 @@ const router = createBrowserRouter([
         element: <h1>ss</h1>,
       },
       {
-        path: "page2",
-        element: <h1>sssz</h1>
+        path: "history",
+        element: <HistoryList />,
       }
     ],
   },
