@@ -39,12 +39,37 @@ const historyData = [
 ];
 
 function HistoryList() {
+  const [filter, setFilter] = useState("Tất cả");
+  const filtered =
+    filter === "Tất cả"
+      ? historyData
+      : historyData.filter((item) =>
+          filter === "Đã thu gom" ? item.status === "Đã thu gom" : item.status === "Chưa thu gom"
+        );
+        
   const [openDetailIdx, setOpenDetailIdx] = useState(null);
   return (
     <div className={styles.history_list_container}>
-      <h2 className={styles.title}>Lịch sử đăng ký thu gom pin</h2>
+      <div className={styles.filter_header}>
+        <h2 className={styles.title}>Lịch sử đăng ký thu gom pin</h2>
+        <div className={styles.filter_row}>
+          <select
+            name="status"
+            id=""
+            onChange={(e) => {
+              setFilter(e.target.value);
+            }}
+            className={styles.filter_btn}
+            value={filter}
+          >
+            <option value="Tất cả">Tất cả</option>
+            <option value="Đã thu gom">Đã thu gom</option>
+            <option value="Chưa thu gom">Chưa thu gom</option>
+          </select>
+        </div>
+      </div>
       <div className={styles.list}>
-        {historyData.map((item, idx) => (
+        {filtered.map((item, idx) => (
           <HistoryCard
             key={idx}
             item={item}

@@ -2,10 +2,9 @@ import React from "react";
 import styles from "./voucher.module.scss";
 import QRCode from "react-qr-code";
 
-function Voucher({ item }) {
-  function exchange(id) {
-    console.log("Voucher exchanged:", id);
-  }
+function Voucher(props) {
+
+  const {item , children}  = props;
 
   return (
     <div className={styles.voucher}>
@@ -22,14 +21,16 @@ function Voucher({ item }) {
                   <b>Point:</b> {item.point}
                 </li>
                 <li>
-                  <b>Voucher Branch:</b> {item.name_branch_voucher}
+                  <b>Branch:</b> {item.name_branch_voucher}
                 </li>
               </ul>
             </div>
           </div>
         </div>
         <div className={styles.edit_voucher}>
-          <div className={styles.editV}></div>
+          <div className={styles.editV}>
+            {children}
+          </div>
         </div>
       </div>
     </div>
