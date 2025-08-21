@@ -23,7 +23,7 @@ function LoginPage() {
 
   const loginHandle = async (e) => {
     try {
-      const login = await fetch(`${LINK_API_PROJECT}api/login`, {
+      const login = await fetch(`${LINK_API_PROJECT}api/auth/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

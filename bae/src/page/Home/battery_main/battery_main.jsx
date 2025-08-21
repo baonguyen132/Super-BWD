@@ -37,7 +37,7 @@ function BatteryMain() {
       const responseData = await response.json();
       const data = JSON.parse(responseData.message);
 
-      localStorage.setItem("namefile", newFileName);
+      localStorage.setItem("nameCart", newFileName);
       setListNumberBattery(data);
     } catch (error) {
       alert("Đã xảy ra lỗi khi gửi ảnh: " + error.message);
@@ -46,54 +46,48 @@ function BatteryMain() {
 
   const handleSendImage = (e) => {
     e.target.blur(); // 👉 Bỏ focus khỏi nút
-  
-    uploadImage();    // 👉 Gửi ảnh
+
+    uploadImage(); // 👉 Gửi ảnh
     const modalEl = document.getElementById("open_mode_load_image");
     const modal = bootstrap.Modal.getInstance(modalEl); // hoặc new Modal nếu chưa được khởi tạo
-    modal?.hide();    // 👉 Đóng modal đúng cách
+    modal?.hide(); // 👉 Đóng modal đúng cách
   };
 
   function addCart() {
     const inputs = document.querySelectorAll('input[id^="count_"]');
-
+    let cart = [];
     inputs.forEach((input) => {
       const count = Number(input.value);
-      const id = input.name.split("_")[1];
-
-      if (count !== 0) {
-        const url = LINK_API_PROJECT+`api/cart/add/${id}-${count}`;
-
-        fetch(url)
-          .then((res) => res.text())
-          .then((data) => {
-            if (data === "fail") {
-              alert("Cần đăng nhập");
-            } else {
-              // Có thể show toast hoặc thông báo khác
-              console.log("Đã thêm vào giỏ hàng:", id, count);
-            }
-          })
-          .catch((err) => {
-            console.error("Lỗi khi thêm vào giỏ hàng:", err);
-          });
-
-        input.value = "0";
+      // id format: count_{element.id}_{index}
+      const parts = input.name.split("_");
+      const index = parts[2]; // index
+      if (count > 0 && batteryList[index]) {
+        cart.push({
+          battery: batteryList[index],
+          count: count,
+        });
       }
+      // Reset input value to 0 after adding to cart
+      input.value = 0;
     });
+    if (cart.length == 0) {
+      alert("Giỏ hàng đang trống.");
+    } else {
+      localStorage.setItem("cart", JSON.stringify(cart));
+      window.location.href = "/dashboard/cart";
+    }
   }
+
   useEffect(() => {
     const fetchBatteryList = async () => {
       try {
-        const response = await fetch(
-          LINK_API_PROJECT + "api/battery",
-          {
-            headers: {
-              "Content-Type": "application/json",
-              Accept: "application/json",
-              "ngrok-skip-browser-warning": "true"
-            }
-          }
-        );
+        const response = await fetch(LINK_API_PROJECT + "api/battery", {
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+            "ngrok-skip-browser-warning": "true",
+          },
+        });
         const data = await response.json();
         setBatteryList(data.records || []);
       } catch (error) {
@@ -106,7 +100,7 @@ function BatteryMain() {
 
   return (
     <>
-      <div id={styles.main_battery}>
+      <div id="main_battery" style={{ padding: "60px 0px" }}>
         <div className={styles.batterys}>
           <h2 className={styles.slogan_battery}>
             <span>
@@ -116,13 +110,14 @@ function BatteryMain() {
 
           <div className={styles.center_page} id="okkk">
             <div className={`row ${styles.parent_battery}`}>
-              {batteryList.map((element) => {
+              {batteryList.map((element, index) => {
                 const key = element.name_battery?.split(" ")[1];
                 const value = listNumberBattery?.[key] || 0;
                 return (
                   <CardBattery
                     element={element}
                     value={value}
+                    index={index}
                     key={element.id}
                   />
                 );

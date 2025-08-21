@@ -1,0 +1,96 @@
+.wrap {
+  padding: 16px;
+}
+
+.title {
+  margin: 0 0 12px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #fff;
+  cursor: pointer;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+  text-align: left;
+  position: relative;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(16, 24, 40, 0.06);
+}
+
+.logoWrap {
+  width: 56px;
+  height: 56px;
+  min-width: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+}
+
+.logo {
+  max-width: 40px;
+  max-height: 40px;
+  object-fit: contain;
+}
+
+.body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.desc {
+  font-size: 12px;
+  color: #6b7280;
+  margin-top: 4px;
+  line-height: 1.2;
+}
+
+.countBadge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  min-width: 28px;
+  height: 20px;
+  padding: 0 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 700;
+  font-size: 12px;
+  border-radius: 999px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+}
+
+/* trạng thái khi không có dữ liệu */
+.empty {
+  padding: 20px;
+  color: #6b7280;
+  background: #fff;
+  border-radius: 8px;
+  border: 1px dashed #e5e7eb;
+  text-align: center;
+}

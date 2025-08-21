@@ -5,8 +5,6 @@ import NavigationCustome from "../../layout/navigation/Navigation.jsx"
 import { Outlet } from "react-router-dom";
 
 function Dashboard() {
-  const { user, dispatch } = useContext(UserContext);
-
   return (
     <div className={styles.dashboard_page}>
       <div className={styles.navigation}>

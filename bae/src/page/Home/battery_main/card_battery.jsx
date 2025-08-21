@@ -1,7 +1,7 @@
 import { LINK_API_PROJECT } from "../../../include/until";
 import styles from "./card_battery.module.scss"
 
-function CardBattery({element , value}) {
+function CardBattery({element, value , index}) {
 
   return (
     <div className={styles.battery}>
@@ -36,8 +36,8 @@ function CardBattery({element , value}) {
               <label htmlFor={`count_${element.id}`}>Số lượng:&nbsp;</label>
               <input
                 type="number"
-                id={`count_${element.id}`}
-                name={`count_${element.id}`}
+                id={`count_${element.id}_${index}`}
+                name={`count_${element.id}_${index}`}
                 value={value}
                 min="0"
                 max="100"

@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import styles from "./DashboardUserInfo.module.scss";
 import { UserContext } from "../../../context/UserContext";
+import { LINK_API_PROJECT } from "../../../include/until";
 
 function DashboardUserInfo() {
   const { user } = useContext(UserContext);
@@ -15,11 +16,16 @@ function DashboardUserInfo() {
   };
 
   const info = user || demoUser;
+  console.log(user);
+  
 
   return (
     <div className={styles.userinfo_container}>
       <div className={styles.avatar_box}>
-        <img src={info.avatar} alt="avatar" />
+        <img
+          src={`${LINK_API_PROJECT}storage/upload/${info.cccd}/upload_image_avata.jpg`}
+          alt="avatar"
+        />
       </div>
       <div className={styles.info_box}>
         <h2>{info.name}</h2>

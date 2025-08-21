@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 
 import Layout from "../../components/common/layout";
-import Footer from "../../include/footer/footer";
+import Footer from "../../layout/footer/footer";
 import Header from "./header/header";
 import Introduce from "./introduce/introduce";
 import BatteryMain from "./battery_main/battery_main";

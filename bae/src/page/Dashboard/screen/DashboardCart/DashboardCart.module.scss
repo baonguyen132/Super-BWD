@@ -1,0 +1,317 @@
+.cart_layout {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  justify-content: space-between;
+  border-radius: 18px;
+}
+
+.cart_left {
+  flex: 1.3;
+  min-width: 0;
+}
+
+.cart_right {
+  flex: 1;
+  min-width: 260px;
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  box-shadow: 0 4px 24px #06d97222;
+  gap: 16px;
+  padding: 18px;
+}
+
+@media (max-width: 900px) {
+  .cart_layout {
+    flex-direction: column;
+    gap: 22px;
+    padding: 18px 6px;
+  }
+
+  .cart_right {
+    max-width: 100%;
+    margin-top: 16px;
+    padding: 18px 8px 12px 8px;
+  }
+}
+
+.cart_container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px #06d97211;
+}
+
+.filter_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(90deg, #e6f9ee 0%, #f8fff8 100%);
+  border-radius: 5px;
+  box-shadow: 0 2px 12px #06d97211;
+  padding: 18px 24px 18px 32px;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #06d972;
+  text-align: center;
+}
+
+.cart_list {
+  margin-bottom: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.cart_item {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  background: linear-gradient(90deg, #e6f9ee 70%, #f8fff8 100%);
+  border-radius: 16px;
+  padding: 22px 28px;
+  box-shadow: 0 4px 18px #06d97218;
+  transition: box-shadow 0.18s, transform 0.18s;
+  position: relative;
+  border: 2px solid #e0eafc;
+  overflow: hidden;
+}
+
+.cart_item:hover {
+  box-shadow: 0 10px 32px #06d97233;
+  transform: translateY(-3px) scale(1.015);
+  border: 2px solid #06d97266;
+}
+
+.battery_img {
+  height: 90px;
+  object-fit: cover;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 2px 12px #06d97222;
+  border: 2px solid #e0eafc;
+  transition: box-shadow 0.2s;
+}
+
+.cart_item:hover .battery_img {
+  box-shadow: 0 6px 24px #06d97233;
+}
+
+.battery_info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.item_name {
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: #06d972;
+  margin-bottom: 2px;
+  letter-spacing: 0.7px;
+  text-shadow: 0 2px 8px #06d97222;
+}
+
+.item_detail {
+  font-size: 1.08rem;
+  color: #333;
+  opacity: 0.9;
+  font-weight: 600;
+}
+
+.quantity_input {
+  width: 80px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 2px solid #bdbdbd;
+  font-size: 1.12rem;
+  text-align: center;
+  outline: none;
+  transition: border 0.2s, box-shadow 0.2s;
+  margin-left: 14px;
+  font-weight: 800;
+  background: #f8fff8;
+  box-shadow: 0 2px 8px #06d97211;
+}
+
+.quantity_input:focus {
+  border: 2px solid #06d972;
+  box-shadow: 0 0 0 3px #a0c4ff33;
+}
+
+.address_form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  background: #f8fff8;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px #06d97211;
+  padding: 22px 18px 16px 18px;
+  border: 2px solid #e0eafc;
+}
+
+.address_label {
+  font-size: 1.08rem;
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.address_input {
+  padding: 12px 16px;
+  border-radius: 10px;
+  border: 1.5px solid #bdbdbd;
+  font-size: 1.05rem;
+  outline: none;
+  transition: border 0.2s;
+  background: #fff;
+  font-weight: 700;
+}
+
+.address_input:focus {
+  border: 2px solid #06d972;
+}
+
+.submit_btn {
+  background: linear-gradient(90deg, #06d972 0%, #4caf50 100%);
+  color: #fff;
+  font-weight: 800;
+  font-size: 1.18rem;
+  border: none;
+  border-radius: 10px;
+  padding: 14px 0;
+  margin-top: 12px;
+  cursor: pointer;
+  box-shadow: 0 4px 18px #06d97233;
+  transition: background 0.2s, transform 0.18s;
+  letter-spacing: 0.7px;
+}
+
+.submit_btn:hover {
+  background: linear-gradient(90deg, #4caf50 0%, #06d972 100%);
+  transform: translateY(-2px) scale(1.02);
+}
+
+/* summary box */
+.summary_box {
+  background: linear-gradient(90deg, #f1fff5 0%, #ffffff 100%);
+  border-radius: 12px;
+  padding: 14px;
+  border: 1.5px solid #e0f6e6;
+  box-shadow: 0 2px 12px #06d97211;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.summary_row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 700;
+  color: #134e3a;
+  font-size: 1.02rem;
+}
+
+.empty_cart {
+  padding: 32px;
+  text-align: center;
+  color: #4a4a4a;
+  font-weight: 700;
+  background: #fbfffb;
+  border-radius: 12px;
+  border: 1px dashed #e0eafc;
+}
+
+/* quantity control buttons + input */
+.qty_control {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  /* remove left margin so layout centers nicely */
+  margin-left: 0;
+}
+
+/* visual display replacing the number input */
+.qty_display {
+  width: 80px;
+  min-height: 44px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 2px solid #bdbdbd;
+  font-size: 1.12rem;
+  text-align: center;
+  font-weight: 800;
+  background: #ffffff;
+  box-shadow: 0 2px 8px #06d97211;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* keep small buttons similar */
+.qty_btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  border: none;
+  background: #06d972;
+  color: white;
+  font-weight: 800;
+  font-size: 1.1rem;
+  cursor: pointer;
+  box-shadow: 0 6px 18px #06d97222;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* remove absolute positioning so it sits inline with controls */
+.remove_btn {
+  background: #fff;
+  color: #d23a3a;
+  border: 1.5px solid #ffdede;
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-weight: 700;
+  box-shadow: 0 6px 14px rgba(255, 222, 222, 0.4);
+}
+
+.remove_btn:hover {
+  background: #fff2f2;
+  transform: translateY(-2px);
+}
+
+.buttonslist {
+  display: flex;
+  gap: 8px;
+  flex-direction: column;
+}
+
+/* ensure layout stable on mobile */
+@media (max-width: 600px) {
+  .qty_control {
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .remove_btn {
+    margin-left: 0;
+    padding: 6px 10px;
+    font-size: 0.92rem;
+  }
+
+  .cart_right {
+    padding: 12px;
+  }
+}

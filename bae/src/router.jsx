@@ -6,25 +6,20 @@ import UserProvider from "./context/UserContext";
 import Dashboard from "./page/Dashboard/dashboard";
 import DashboardHome from "./page/Dashboard/screen/DasboardHome/DashboardHome";
 import HistoryList from "./page/Dashboard/screen/DashboardHistory/HistoryList";
-import DashboardVoucher from "./page/Dashboard/screen/DashboardVoucher/DashboardVoucher";
-
-
+import DashboardCart from "./page/Dashboard/screen/DashboardCart/DashboardCart";
+import DashboardVoucher from "./page/Dashboard/screen/DashboardVoucher";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: (
-      <UserProvider>
         <Home />
-      </UserProvider>
     ),
   },
   {
     path: "/dashboard",
     element: (
-      <UserProvider>
         <Dashboard />
-      </UserProvider>
     ),
     children: [
       {
@@ -38,7 +33,11 @@ const router = createBrowserRouter([
       {
         path: "history",
         element: <HistoryList />,
-      }
+      },
+      {
+        path: "cart",
+        element: <DashboardCart />, // Assuming you want to use the same component for cart
+      },
     ],
   },
   {

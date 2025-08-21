@@ -1,53 +1,39 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import styles from "./HistoryList.module.scss";
 import HistoryCard from "../../../../components/HistoryPage/HistoryCard";
-
-// Dummy data for demonstration
-const historyData = [
-  {
-    time: "2025-08-01 09:30",
-    status: "Chưa thu gom",
-    points: 10,
-    total: 20,
-    batteryTypes: [
-      { type: "AA", quantity: 2 },
-      { type: "AAA", quantity: 1 },
-      { type: "CR2032", quantity: 2 },
-    ],
-  },
-  {
-    time: "2025-07-25 14:00",
-    status: "Đã thu gom",
-    points: 20,
-    total: 20,
-    batteryTypes: [
-      { type: "AA", quantity: 10 },
-      { type: "AAA", quantity: 5 },
-      { type: "CR2032", quantity: 5 },
-    ],
-  },
-  {
-    time: "2025-07-10 16:45",
-    status: "Chưa thu gom",
-    points: 5,
-    total: 20,
-    batteryTypes: [
-      { type: "AA", quantity: 1 },
-      { type: "AAA", quantity: 1 },
-    ],
-  },
-];
+import { UserContext } from "../../../../context/UserContext";
+import useFetchHistorys from "../../../../hooks/useHistory";
 
 function HistoryList() {
+  const { user, dispatch } = useContext(UserContext);
+  console.log("user", user.id);
+
+  const [historyData, setData] = useState([]);
+
+  const { historys, loading, error } = useFetchHistorys({
+    idUser: user.id,
+    dependencies: [],
+  });
+
+  useEffect(() => {
+    if (historys?.data) {
+      setData(historys.data);
+    }
+  }, [historys]);
   const [filter, setFilter] = useState("Tất cả");
   const filtered =
     filter === "Tất cả"
       ? historyData
       : historyData.filter((item) =>
-          filter === "Đã thu gom" ? item.status === "Đã thu gom" : item.status === "Chưa thu gom"
+          filter === "Đã thu gom"
+            ? item.token === "NULL"
+            : item.token !== "NULL"
         );
-        
+
   const [openDetailIdx, setOpenDetailIdx] = useState(null);
+
+
+
   return (
     <div className={styles.history_list_container}>
       <div className={styles.filter_header}>
@@ -55,10 +41,7 @@ function HistoryList() {
         <div className={styles.filter_row}>
           <select
             name="status"
-            id=""
-            onChange={(e) => {
-              setFilter(e.target.value);
-            }}
+            onChange={(e) => setFilter(e.target.value)}
             className={styles.filter_btn}
             value={filter}
           >
@@ -69,16 +52,24 @@ function HistoryList() {
         </div>
       </div>
       <div className={styles.list}>
-        {filtered.map((item, idx) => (
-          <HistoryCard
-            key={idx}
-            item={item}
-            isOpen={openDetailIdx === idx}
-            onToggle={() =>
-              setOpenDetailIdx(openDetailIdx === idx ? null : idx)
-            }
-          />
-        ))}
+        {loading ? (
+          <div>Loading...</div>
+        ) : error ? (
+          <div>Error: {error}</div>
+        ) : !filtered || filtered.length === 0 ? (
+          <div className={styles.no_data}>Không có dữ liệu</div>
+        ) : (
+          filtered.map((item, idx) => (
+            <HistoryCard
+              key={idx}
+              item={item}
+              isOpen={openDetailIdx === idx}
+              onToggle={() =>
+                setOpenDetailIdx(openDetailIdx === idx ? null : idx)
+              }
+            />
+          ))
+        )}
       </div>
     </div>
   );

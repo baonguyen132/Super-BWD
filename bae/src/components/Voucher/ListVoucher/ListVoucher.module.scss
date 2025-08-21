@@ -1,0 +1,147 @@
+:root {
+  --accent: #06d972;
+  --accent-dark: #4caf50;
+  --muted: #6b7280;
+  --card-bg: #ffffff;
+  --glass: rgba(6, 217, 114, 0.08);
+}
+
+.voucher_screen_container {
+  width: 100%;
+  padding: 0px 16px;
+  background: linear-gradient(180deg, #fbfffb 0%, #ffffff 100%);
+}
+
+.inner {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.filter_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 0px;
+}
+
+.filter_row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.filter_label {
+  font-size: 0.95rem;
+  color: var(--muted);
+  font-weight: 600;
+  margin-right: 6px;
+}
+
+/* select */
+.filter_btn {
+  height: 40px;
+  padding: 8px 40px 8px 14px;
+  border-radius: 10px;
+  border: 1px solid #e6eef0;
+  background: linear-gradient(90deg, #ffffff 0%, #f7fff6 100%);
+  color: #24303a;
+  font-weight: 700;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  appearance: none;
+  background-image: url('data:image/svg+xml;utf8,<svg fill="%23333" height="18" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 18px 18px;
+  cursor: pointer;
+}
+
+/* voucher grid */
+.voucher_list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+/* wrapper to give consistent card height and spacing */
+.voucher_card_wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* redeem button */
+.redeem_button {
+  background: linear-gradient(90deg, var(--accent) 0%, var(--accent-dark) 100%);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  width: 100%;
+  padding: 12px 14px;
+  font-weight: 800;
+  font-size: 1rem;
+  box-shadow: 0 8px 20px rgba(6, 217, 114, 0.12);
+  outline: none;
+  cursor: pointer;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.redeem_button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(6, 217, 114, 0.18);
+}
+
+/* redeemed label */
+.redeemed_label {
+  background: #f0fff5;
+  color: var(--accent);
+  border-radius: 10px;
+  width: 100%;
+  padding: 10px 12px;
+  font-weight: 800;
+  font-size: 0.98rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(6, 217, 114, 0.06);
+}
+
+/* Responsive adjustments */
+@media only screen and (max-width: 900px) {
+  .filter_header {
+    padding: 14px 16px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .title {
+    text-align: left;
+  }
+
+  .voucher_list {
+    gap: 16px;
+  }
+}
+
+@media only screen and (max-width: 520px) {
+  .voucher_screen_container {
+    padding: 18px 12px;
+  }
+
+  .filter_btn {
+    width: 100%;
+    background-position: right 16px center;
+  }
+
+  .filter_row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
