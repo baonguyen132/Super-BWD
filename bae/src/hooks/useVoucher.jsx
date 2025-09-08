@@ -54,4 +54,50 @@ function useFetchVouchers({ id_branch , dependencies = [] }) {
 
 }
 
+
+export const  useFetchVoucherOfUser = ({ idUser , dependencies = [] }) => {
+
+    
+    const [vouchers, setVoucher] = useState([])
+    const [loading, setLoading] = useState(false)
+    const [error, setError] = useState(null)
+
+    useEffect(() => {
+        let isCancelled = false
+
+        const fetchVouchers = async () => {
+            setLoading(true)
+            setError(null)
+
+            try {
+                const response = await fetch(`${LINK_API_PROJECT}api/voucherapi/voucherofuser/client=${idUser}`, {
+                    method: "GET",
+                    headers: {
+                        "Accept": "application/json",
+                        "Content-Type": "application/json",
+                    }
+                })
+                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                if (!isCancelled) {
+                    const data = await response.json()
+                    setVoucher(data)
+                }
+            } catch (error) {
+                if (!isCancelled) setError(error.message);
+            }
+            finally {
+                if (!isCancelled) setLoading(false);
+            }
+        }
+        
+        fetchVouchers();
+        return () => {
+            isCancelled = true;
+        };
+    }, dependencies)
+
+    return { vouchers, loading, error };
+
+}
+
 export default useFetchVouchers

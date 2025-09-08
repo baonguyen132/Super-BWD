@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styles from "./ListVoucher.module.scss";
 import Voucher from "../../common/voucher/voucher";
 
-function ListVoucher({ listvoucher }) {
+function ListVoucher({ listvoucher , onHandle }) {
   return (
     <div className={styles.voucher_screen_container}>
       <div className={styles.filter_header}>
@@ -81,7 +81,7 @@ function ListVoucher({ listvoucher }) {
             }
           >
             {item.IDClient === 0 ? (
-              <button className={styles.redeem_button}>Đổi ngay</button>
+              <button className={styles.redeem_button} onClick={() => { onHandle(item.id) }}>Đổi ngay</button>
             ) : (
               <></>
             )}

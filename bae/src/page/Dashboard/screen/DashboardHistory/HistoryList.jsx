@@ -3,12 +3,13 @@ import styles from "./HistoryList.module.scss";
 import HistoryCard from "../../../../components/HistoryPage/HistoryCard";
 import { UserContext } from "../../../../context/UserContext";
 import useFetchHistorys from "../../../../hooks/useHistory";
+import QRCode from "react-qr-code";
+import QRCodeModal from "../../../../components/HistoryPage/QRCodeModal";
 
 function HistoryList() {
-  const { user, dispatch } = useContext(UserContext);
-  console.log("user", user.id);
-
+  const { user } = useContext(UserContext);
   const [historyData, setData] = useState([]);
+  const [token , setToken] = useState(null);
 
   const { historys, loading, error } = useFetchHistorys({
     idUser: user.id,
@@ -32,7 +33,17 @@ function HistoryList() {
 
   const [openDetailIdx, setOpenDetailIdx] = useState(null);
 
-
+  // lock body scroll while modal open
+  useEffect(() => {
+    if (token) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [token]);
 
   return (
     <div className={styles.history_list_container}>
@@ -67,10 +78,18 @@ function HistoryList() {
               onToggle={() =>
                 setOpenDetailIdx(openDetailIdx === idx ? null : idx)
               }
+              openQR={(t) => {
+                if (t && t !== "NULL") {
+                  setToken(t);
+                }
+              }}
             />
           ))
         )}
       </div>
+
+      {/* modal overlay for QR */}
+      {token && (<QRCodeModal token={token} setTokenHandle={() => setToken(null)}/>)}
     </div>
   );
 }

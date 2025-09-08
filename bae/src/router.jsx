@@ -8,6 +8,7 @@ import DashboardHome from "./page/Dashboard/screen/DasboardHome/DashboardHome";
 import HistoryList from "./page/Dashboard/screen/DashboardHistory/HistoryList";
 import DashboardCart from "./page/Dashboard/screen/DashboardCart/DashboardCart";
 import DashboardVoucher from "./page/Dashboard/screen/DashboardVoucher";
+import DashboardMyVoucher from "./page/Dashboard/screen/DashboardMyVoucher";
 
 const router = createBrowserRouter([
   {
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
         path: "cart",
         element: <DashboardCart />, // Assuming you want to use the same component for cart
       },
+      {
+        path: "my-voucher",
+        element: <DashboardMyVoucher />,
+      }
     ],
   },
   {

@@ -1,0 +1,93 @@
+/* modal overlay + modal */
+.qr_overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(6, 17, 12, 0.55); // tăng độ tối overlay
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1200;
+  padding: 24px;
+  backdrop-filter: blur(2px); // hiệu ứng mờ nền
+}
+
+.qr_modal {
+  background: linear-gradient(180deg, #ffffff 0%, #e6f9ee 100%);
+  border-radius: 18px;
+  box-shadow: 0 16px 48px 0 rgba(6, 217, 114, 0.18), 0 2px 8px #06d97222;
+  padding: 32px 32px 28px;
+  max-width: 420px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  border: 2px solid #b8f5d1;
+  animation: qrModalFadeIn 0.25s cubic-bezier(0.4,0,0.2,1);
+}
+
+@keyframes qrModalFadeIn {
+  from { transform: translateY(40px) scale(0.96); opacity: 0; }
+  to { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+.qr_close {
+  position: absolute;
+  right: 16px;
+  top: 14px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: #f4fdf8;
+  color: #0c5a36;
+  font-size: 22px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px #06d97222;
+  transition: background 0.18s, color 0.18s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:hover {
+    background: #06d972;
+    color: #fff;
+  }
+}
+
+.qr_title {
+  margin: 10px 0 18px;
+  font-size: 1.35rem;
+  color: #0c5a36;
+  font-weight: 900;
+  letter-spacing: 0.01em;
+}
+
+.qr_code {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px;
+  background: #fff;
+  border-radius: 14px;
+  border: 2px solid #d2f5e1;
+  box-shadow: 0 8px 24px #06d97211;
+  margin-bottom: 18px;
+  transition: box-shadow 0.2s;
+  &:hover {
+    box-shadow: 0 12px 32px #06d97222;
+  }
+}
+
+.qr_code img {
+  max-width: 180px;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+.qr_text {
+  font-size: 1.05rem;
+  color: #2b513f;
+  font-weight: 600;
+  margin: 0;
+  letter-spacing: 0.01em;
+  line-height: 1.5;
+}

@@ -8,6 +8,7 @@ function NavigationCustome() {
   const listMenu = [
     { icon: "bx bx-home-circle", link: "/dashboard" },
     { icon: "bx bx-equal-square", link: "/dashboard/voucher" },
+    { icon: "bx bx-user", link: "/dashboard/my-voucher" },
     { icon: "bx bx-arrow-from-bottom", link: "/dashboard/history" },
     { icon: "bx bx-cog", link: "/dashboard/cart" },
   ];

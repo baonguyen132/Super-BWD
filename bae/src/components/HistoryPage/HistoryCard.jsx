@@ -1,11 +1,9 @@
 import React from "react";
 import styles from "./HistoryCard.module.scss";
 
-function HistoryCard({ item, isOpen, onToggle }) {
-  console.log(item);
-  let total = 0 ;
+function HistoryCard({ item, isOpen, onToggle , openQR }) {
   return (
-    <div className={styles.card_tag}>
+    <div className={styles.card_tag} onClick={() => openQR(item.token)}>
       <div className={styles.card_header}>
         <span className={styles.card_time}>
           <i className="bx bx-calendar"></i> {item.created_at}
