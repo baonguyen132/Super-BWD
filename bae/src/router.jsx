@@ -9,6 +9,7 @@ import HistoryList from "./page/Dashboard/screen/DashboardHistory/HistoryList";
 import DashboardCart from "./page/Dashboard/screen/DashboardCart/DashboardCart";
 import DashboardVoucher from "./page/Dashboard/screen/DashboardVoucher";
 import DashboardMyVoucher from "./page/Dashboard/screen/DashboardMyVoucher";
+import Message from "./page/Message/Message";
 
 const router = createBrowserRouter([
   {
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
       {
         path: "my-voucher",
         element: <DashboardMyVoucher />,
+      },
+      {
+        path: "message",
+        element: <Message />,
       }
     ],
   },

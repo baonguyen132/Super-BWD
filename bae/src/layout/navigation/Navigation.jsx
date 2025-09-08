@@ -11,6 +11,7 @@ function NavigationCustome() {
     { icon: "bx bx-user", link: "/dashboard/my-voucher" },
     { icon: "bx bx-arrow-from-bottom", link: "/dashboard/history" },
     { icon: "bx bx-cog", link: "/dashboard/cart" },
+    { icon: "bx bx-message-rounded", link: "/dashboard/message" },
   ];
 
   // Tính toán vị trí của liquid_glass dựa trên route hiện tại
