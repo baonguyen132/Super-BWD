@@ -7,11 +7,11 @@ function NavigationCustome() {
 
   const listMenu = [
     { icon: "bx bx-home-circle", link: "/dashboard" },
-    { icon: "bx bx-equal-square", link: "/dashboard/voucher" },
-    { icon: "bx bx-user", link: "/dashboard/my-voucher" },
-    { icon: "bx bx-arrow-from-bottom", link: "/dashboard/history" },
-    { icon: "bx bx-cog", link: "/dashboard/cart" },
+    { icon: "bxr  bx-gift", link: "/dashboard/voucher" },
+    { icon: "bxr  bx-discount", link: "/dashboard/my-voucher" },
+    { icon: "bxr  bx-history", link: "/dashboard/history" },
     { icon: "bx bx-message-rounded", link: "/dashboard/message" },
+    { icon: "bxr  bx-cart", link: "/dashboard/cart" },
   ];
 
   // Tính toán vị trí của liquid_glass dựa trên route hiện tại
